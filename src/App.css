@@ -18,3 +18,17 @@ button {
 img {
   width: 120px;
 }
+
+.container {
+  background-image: url("./image-assets/teeLogin.png");
+  height: 700px;
+}
+
+.logos {
+  float: right;
+}
+
+.welcome {
+  font-size: 50;
+  color: #007bff;
+}
