@@ -6,6 +6,7 @@
 
 body {
   padding: 2rem;
+  background-color: #f5f5f5;
 }
 
 button {
@@ -31,4 +32,8 @@ img {
 .welcome {
   font-size: 50;
   color: #007bff;
+}
+
+.logout {
+  margin-bottom: 20px;
 }
