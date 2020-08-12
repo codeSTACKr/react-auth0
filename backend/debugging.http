@@ -16,3 +16,22 @@ GET http://localhost:5000/users/
 ### testing crud
 
 GET http://localhost:5000/info/
+
+### testing GET products
+
+GET http://localhost:5000/products/
+
+### testing POST new product
+
+POST http://localhost:5000/products/add
+Content-Type: application/json
+
+{
+    "name": "Wine Tumbler",
+    "category1": "Accessories",
+    "category2": "Home Goods",
+    "description": "Stainless Steel Wine Tumbler for all your Winetumbling needs!",
+    "brand": "American Wino",
+    "price": "19.99"
+   
+}
