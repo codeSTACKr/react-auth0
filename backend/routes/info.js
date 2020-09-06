@@ -48,7 +48,7 @@ router.route("/:id").get((req, res) => {
 router.route("/:id").delete((req, res) => {
   Information.findById(req.params.id)
     .then(() => {
-      res.json("Information Delered");
+      res.json("Information Deleted");
     })
     .catch((err) => {
       res.status(400).json("Error: " + err);

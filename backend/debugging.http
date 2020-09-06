@@ -27,11 +27,28 @@ POST http://localhost:5000/products/add
 Content-Type: application/json
 
 {
+    "sku": "3D57JJFF0",
+    "quantity": 1,
     "name": "Wine Tumbler",
-    "category1": "Accessories",
-    "category2": "Home Goods",
+    "nameTranslated": {
+        "en": "hello",
+        "es": "hola"
+    },
+    "price": 19.99,
+    "compareToPrice": 5.00,
+    "isShippingRequired": true,
+    "categoryIds": [1, 2],
+    "weight": 5,
+    "enabled": true,
     "description": "Stainless Steel Wine Tumbler for all your Winetumbling needs!",
+    "productClassId": 4,
+    "created": "user1",
+    "fixedShippingRateOnly": false,
+    "fixedShippingRate": 20,
     "brand": "American Wino",
-    "price": "19.99"
-   
+    "tax":{
+        "enabledManualTaxes": [1]
+    },
+    "optionsType": "type"
+       
 }
