@@ -12,36 +12,59 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
-  const username = req.body.username;
+  const name = req.body.name;
+  const sku = req.body.sku;
+  const quantity = req.body.quantity;
+  const nameTranslated = req.body.nameTranslated;
+  const price = req.body.price;
+  const compareToPrice = req.body.compareToPrice;
+  const isShippingRequired = req.body.isShippingRequired;
+  const categoryIds = req.body.categoryIds;
+  const weight = req.body.weight;
+  const enabled = req.body.enabled;
   const description = req.body.description;
-  const date = Date.parse(req.body.date);
+  const productClassId = req.body.productClassId;
+  const created = req.body.created;
+  const fixedShippingRateOnly = req.body.fixedShippingRateOnly;
+  const fixedShippingRate = req.body.fixedShippingRate;
+  const brand = req.body.brand;
+  const tax = req.body.tax;
+  const optionsType = req.body.optionsType;
+  const shipping = req.body.shipping;
 
   const newProducts = new Products({
-    username,
+    name,
+    sku,
+    quantity,
+    nameTranslated,
+    price,
+    brand,
+    compareToPrice,
+    isShippingRequired,
+    categoryIds,
+    weight,
+    enabled,
     description,
-    date,
+    productClassId,
+    created,
+    fixedShippingRateOnly,
+    fixedShippingRate,
+    tax,
+    optionsType,
+    shipping
   });
 
-  newProducts
-    .save()
-    .then(() => {
-      res.json("Product Added!");
-    })
-    .catch((err) => {
-      res.status(400).json("Error: " + err);
-    });
+  newProducts.save()
+    .then(() => res.json("Product Added!"))
+    .catch(err => res.status(400).json("Error: " + err));
 });
 
 // implement crud functions
 //  read
 router.route("/:id").get((req, res) => {
   Products.findById(req.params.id)
-    .then((products) => {
-      res.json(products);
-    })
-    .catch((err) => {
-      res.status(400).json("Error: " + err);
-    });
+    .then(products => res.json(products))
+    .catch(err => res.status(400).json("Error: " + err));
 });
 
 // delete record by id
@@ -59,9 +82,9 @@ router.route("/:id").delete((req, res) => {
 router.route("/update/:id").post((req, res) => {
   Products.findById(req.params.id)
     .then((products) => {
-      products.username = req.body.username;
-      products.description = req.body.description;
-      products.date = Date.parse(req.body.date);
+      products.name = req.body.name;
+     // products.description = req.body.description;
+      //products.date = Date.parse(req.body.date);
 
       products
         .save()

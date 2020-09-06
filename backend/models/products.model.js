@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { schema } = require("./info.model");
 const Schema = mongoose.Schema;
 
 const productsSchema = new Schema({
@@ -12,7 +11,7 @@ const productsSchema = new Schema({
   },
   price: Number,
   compareToPrice: Number,
-  isShippingRequired: String,
+  isShippingRequired: Boolean,
   categoryIds: [Number],
   weight: Number,
   enabled: Boolean,
@@ -21,45 +20,14 @@ const productsSchema = new Schema({
   created: String,
   fixedShippingRateOnly: Boolean,
   fixedShippingRate: Number,
+  brand: String,
   tax: {
     enabledManualTaxes: [
       Number
     ]
   },
-  Options: [
-    {
-      type: String,
-      name: String,
-      nameTranslated: {
-        en: String,
-        es: String
-      },
-      choices: [
-        {
-          text: String,
-          textTranslated: {
-            en: String,
-            es: String
-          },
-          priceModifier: Number,
-          priceModifierType: String
-        }, 
-      ],
-      defaultChoice: Number,
-      required: Boolean
-    }
-  ],
-  shipping: {
-    type: String,
-    methodMarkup: Number,
-    flatRate: Number,
-    disabledMethods: [
-      String
-    ],
-    enabledMethods: [
-      String
-    ]
-  }
+  optionsType: String,
+     
 });
 
 const Products = mongoose.model("Products", productsSchema);
