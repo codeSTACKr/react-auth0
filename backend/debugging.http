@@ -4,9 +4,9 @@ POST  http://localhost:5000/info/add
 Content-Type: application/json
 
 {
-    "username":"person 1",
+    "username":"erick-pacheco",
     "description": "posting",
-    "date": "2020-08-01T02:22:49.052Z"
+    "date": "6:34 PM"
 }
 
 ### testing get request
@@ -27,28 +27,145 @@ POST http://localhost:5000/products/add
 Content-Type: application/json
 
 {
-    "sku": "3D57JJFF0",
+    "sku": "full schema",
     "quantity": 1,
-    "name": "Wine Tumbler",
+    "name": "test-post-3",
     "nameTranslated": {
         "en": "hello",
         "es": "hola"
     },
+
     "price": 19.99,
     "compareToPrice": 5.00,
     "isShippingRequired": true,
     "categoryIds": [1, 2],
+
     "weight": 5,
     "enabled": true,
-    "description": "Stainless Steel Wine Tumbler for all your Winetumbling needs!",
+    "description": "Submits all information required by ecwid",
     "productClassId": 4,
-    "created": "user1",
+    "created": "7:09 pm",
     "fixedShippingRateOnly": false,
-    "fixedShippingRate": 20,
-    "brand": "American Wino",
+    "fixedShippingRate": 2.0,
+    "brand": "Brand",
     "tax":{
-        "enabledManualTaxes": [1]
+        "enabledManualTaxes": [97397935]
     },
-    "optionsType": "type"
+    "options": [
+    {
+      "type": "RADIO",
+      "name": "Size",
+      "nameTranslated": {
+        "en": "Size",
+        "es": "Tamaño"
+      },
+      "choices": [
+        {
+          "text": "Small",
+          "textTranslated": {
+            "en": "Small",
+            "es": "Pequeño"
+          },
+          "priceModifier": 0,
+          "priceModifierType": "ABSOLUTE"
+        },
+        {
+          "text": "Large",
+          "textTranslated": {
+            "en": "Large",
+            "es": "Pequeño"
+          },
+          "priceModifier": 0.5,
+          "priceModifierType": "ABSOLUTE"
+        }
+      ],
+        "defaultChoice": 0,
+        "required": false
+    }
+  ],
+  "shipping": {
+    "type": "SELECTED_METHODS",
+    "methodMarkup": 0,
+    "flatRate": 0,
+    "disabledMethods": [
+      "1396442138-1534946367952"
+    ],
+    "enabledMethods": []
+  }
+       
+}
+
+
+### testing // UPDATE /POST new product 
+
+POST  http://localhost:5000/products/update/5f540753db2f673bb006fd32
+Content-Type: application/json
+
+{
+    "sku": "update test",
+    "quantity": 1,
+    "name": "update",
+    "nameTranslated": {
+        "en": "hello",
+        "es": "hola"
+    },
+
+    "price": 19.99,
+    "compareToPrice": 5.00,
+    "isShippingRequired": true,
+    "categoryIds": [1, 2],
+
+    "weight": 5,
+    "enabled": true,
+    "description": "Submits all information required by ecwid",
+    "productClassId": 4,
+    "created": "7:09 pm",
+    "fixedShippingRateOnly": false,
+    "fixedShippingRate": 2.0,
+    "brand": "Brand",
+    "tax":{
+        "enabledManualTaxes": [97397935]
+    },
+    "options": [
+    {
+      "type": "RADIO",
+      "name": "Size",
+      "nameTranslated": {
+        "en": "Size",
+        "es": "Tamaño"
+      },
+      "choices": [
+        {
+          "text": "Small",
+          "textTranslated": {
+            "en": "Small",
+            "es": "Pequeño"
+          },
+          "priceModifier": 0,
+          "priceModifierType": "ABSOLUTE"
+        },
+        {
+          "text": "Large",
+          "textTranslated": {
+            "en": "Large",
+            "es": "Pequeño"
+          },
+          "priceModifier": 0.5,
+          "priceModifierType": "ABSOLUTE"
+        }
+      ],
+        "defaultChoice": 0,
+        "required": false
+    }
+  ],
+  "shipping": {
+    "type": "SELECTED_METHODS",
+    "methodMarkup": 0,
+    "flatRate": 0,
+    "disabledMethods": [
+      "1396442138-1534946367952"
+    ],
+    "enabledMethods": []
+  }
        
 }

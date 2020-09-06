@@ -7,7 +7,7 @@
     "start:express": "./node_modules/.bin/nodemon server.js",
     "start:react": "./node_modules/.bin/react-scripts ../src/App.js"
   },
-   "keywords": [],
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
